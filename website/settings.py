@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'michael',
     'alana',
     'seema',
+    'home',
     'users',
     'django.contrib.admin',
     'django.contrib.auth',

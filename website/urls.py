@@ -22,5 +22,6 @@ urlpatterns = [
     path("michael/", include("michael.urls")),
     path("alana/", include("alana.urls")),
     path("seema/", include("seema.urls")),
+    path("home/", include("home.urls")),
     path("users/", include("users.urls"))
 ]
