@@ -2,7 +2,18 @@
 
 {% block body %}
 
-    <h1>Welcome, {{ request.user }}</h1>
+    <h1>Profile: {{ request.user }}</h1>
+    <ul>
+        <li><a href="/">Home</a> </li>
+        <li><a href="/blog">Blog</a> </li>
+        <li><a href="/michael">Michael</a> </li>
+        <li><a href="/alana">Alana</a> </li>
+        <li><a href="/seema">Seema</a> </li>
+
+
+
+    </ul>
+    <h3>User Info:</h3>
     <ul>
 
         <li>Username: {{ request.user.username}}</li>

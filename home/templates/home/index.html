@@ -1,0 +1,24 @@
+{% extends "home/layout.html" %}
+
+{% block body %}
+    <h1>Home Page</h1>
+
+
+    {% if request.user.username == "" %}
+        <a href="/users/login">login?</a>
+    {% else %}
+        <h5>Welcome, {{ request.user }}</h5>
+       <h5><a href="/users/logout">logout</a></h5>
+    {% endif%}
+    <h3>Links to other pages:</h3>
+    <ul>
+        <li><a href="/blog">Blog</a> </li>
+        <li><a href="/michael">Michael</a> </li>
+        <li><a href="/alana">Alana</a> </li>
+        <li><a href="/seema">Seema</a> </li>
+        <li><a href="/users">Users</a> </li>
+
+
+    </ul>
+
+{% endblock %}
