@@ -1,10 +1,13 @@
 {% extends "home/layout.html" %}
 
 {% block body %}
-
+<div align="middle">
+    <h1>Login</h1>
     {% if message %}
-<div ><p  style="color:red;">{{ message }}</p></div>
+<p  style="color:red;">{{ message }}</p></div>
     {% endif %}
+<div align="middle">
+
     <form action= "{% url 'login' %}" method="post">
         {% csrf_token %}
         <input type="text" name="username" placeholder="Username">
@@ -13,5 +16,8 @@
     </form>
 
     <a href="{% url 'signup' %}" >Sign Up!</a>
+
+</div>
+
 
 {% endblock %}
