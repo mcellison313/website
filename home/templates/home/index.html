@@ -1,24 +1,39 @@
 {% extends "home/layout.html" %}
 
 {% block body %}
-    <h1>Home Page</h1>
+
+    <table width="100%" height="60">
+        <tbody>
+            <tr>
+                <td width="210"><h1>Home Page</h1></td>
+                <td valign="top">
+                    <table height="57" width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td><a href="/blog">Blog</a></td>
+                                <td><a href="/michael">Michael</a></td>
+                                <td><a href="/seema">Seema</a> </td>
+                                <td><a href="/alana">Alana</a> </td>
+                                <td><a href="/users">
+                                    {% if request.user.username == "" %}
+                                        <a href="/users/login">login</a>
+                                    {% else %}
+                                         <a href="/users">{{ request.user }}</a>
+                                    {% endif%}</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 
-    {% if request.user.username == "" %}
-        <a href="/users/login">login?</a>
-    {% else %}
-        <h5>Welcome, {{ request.user }}</h5>
-       <h5><a href="/users/logout">logout</a></h5>
-    {% endif%}
-    <h3>Links to other pages:</h3>
-    <ul>
-        <li><a href="/blog">Blog</a> </li>
-        <li><a href="/michael">Michael</a> </li>
-        <li><a href="/alana">Alana</a> </li>
-        <li><a href="/seema">Seema</a> </li>
-        <li><a href="/users">Users</a> </li>
 
 
-    </ul>
+
+
+
 
 {% endblock %}
