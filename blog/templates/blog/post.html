@@ -1,6 +1,21 @@
-{% extends "blog/layout.html" %}
+{% extends "home/layout.html" %}
 
 {% block body %}
-    <h1>POST #</h1>
+    <a href="/blog"> Back To Posts</a>
+    <div align="middle">
+        <h1>{{ post.title }}</h1>
+        <p>by {{ post.author }}</p>
+         <p> {{ post.date }}</p>
+        <h4>{{ post.message }}</h4>
+        <p></p>
+        <h3>Replies:</h3>
+        {% for reply in replies %}
+
+            <p><br>{{ reply.author }} {{reply.date}}</p>
+            <p>{{ reply.message }}<br></p>
+        {% endfor %}
+
+
+    </div>
 
 {% endblock %}

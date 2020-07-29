@@ -1,11 +1,13 @@
 {% extends "home/layout.html" %}
 
 {% block body %}
-
+{% load static %}
 
 <div align="center">
     <h2>Michael's Page</h2>
-<img src="images/michael.jpeg" width="580" height="772" alt="Picture of me that i cant get to load"/>
+<img src="{% static 'michael/michael.jpeg' %}"
+     width="386" height="515" alt="Picture of me"/>
+    <p>Here is me with my wonderful girlfriend, Casie.</p>
 </div>
 
 
