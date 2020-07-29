@@ -14,8 +14,19 @@
             <p><br>{{ reply.author }} {{reply.date}}</p>
             <p>{{ reply.message }}<br></p>
         {% endfor %}
+        <h3>Add Reply</h3>
 
+        {% if message %}
+            <p style="color:red;">{{ message }}</p>
+        {% endif %}
 
+        <form action="{% url 'reply' post.id %}" method="post">
+        {% csrf_token %}
+            <textarea  name="replyText" rows="4" cols="50" placeholder="Enter Reply Here">
+            </textarea>
+        <br>
+        <input type="submit">
+        </form>
     </div>
 
 {% endblock %}
