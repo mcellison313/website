@@ -20,9 +20,12 @@
             <p style="color:red;">{{ message }}</p>
         {% endif %}
 
+
+<!--        cant get any of this to work help-->
         <form action="{% url 'reply' post.id %}" method="post">
         {% csrf_token %}
             <textarea  name="replyText" rows="4" cols="50" placeholder="Enter Reply Here">
+                TextyText
             </textarea>
         <br>
         <input type="submit">
