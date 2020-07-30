@@ -7,26 +7,21 @@
         <style type="text/css" media="screen">
         a:hover{
 
- border:1px solid white;
+
 }
 
         a:link {
   text-decoration: none ;
+
 }
+
                * {margin:0;padding:0}
 html, body {height:100%}
 body {background:#222;font-family:Arial, Helvetica, sans-serif;font-size:100%;line-height:1.125em;color:#fff}
 img {border:0;vertical-align:top;text-align:left}
 object {vertical-align:top;outline:none}
 ul, ol {list-style:none}
-.fleft {float:left}
-.fright {float:right}
-.clear {clear:both}
-.col-1, .col-2, .col-3 {float:left}
-.alignright {text-align:right}
-.aligncenter {text-align:center}
-.wrapper {width:100%;overflow:hidden}
-.container {width:100%}
+
 /* GLOBAL */
 #main {width:1000px;margin:0 auto;font-size:.75em;position:relative}
 #header {height:390px;background:url(images/header-bg.jpg) no-repeat left 59px;overflow:hidden}
@@ -38,17 +33,17 @@ ul, ol {list-style:none}
 /* forms parameters */
 input, select, textarea {font-family:Arial, Helvetica, sans-serif; font-size:1em;vertical-align:middle;font-weight:normal}
 /* other */
-.img-indent {margin:0 20px 0 0;float:left}
-.img-box {width:100%;overflow:hidden;padding-bottom:20px}
-.img-box img {float:left;margin:0 20px 0 0}
-.extra-wrap {overflow:hidden}
+.flex-container {
+  display: flex;
+}
 p {margin-bottom:18px}
 .p1 {margin-bottom:9px}
 .p2 {margin-bottom:18px}
 .p3 {margin-bottom:27px}
 /* txt, links, lines, titles */
-a {color:#fff;outline:none}
-a:hover{text-decoration:none}
+a {color:#b5d2f0;outline:none}
+a:hover{text-decoration:none;
+ border:1px solid white;}
 h1, h2 {line-height:1.2em;color:#fff;text-transform:uppercase;font-weight:normal;margin-bottom:19px}
 h1 {font-size:24px}
 h2 {font-size:20px}
@@ -62,37 +57,23 @@ h6 {}
 .link1:hover {text-decoration:underline}
 .link1 em {display:block;background:url(images/link1-left.gif) no-repeat left top}
 .link1 b {display:block;background:url(images/link1-right.gif) no-repeat right top;padding:2px 15px 2px 15px;font-weight:normal; font-style:normal}
-.button {float:right}
-.button span {display:block;background:url(images/button-left.gif) no-repeat left top;padding-left:3px}
-.button span span {background:url(images/button-right.gif) no-repeat right top;padding-right:4px;padding-left:0}
-.button span span a {display:block;background:#333743;padding:4px 5px 3px 5px;color:#fff;text-decoration:none;text-transform:uppercase}
-.button span span a:hover {text-decoration:underline}
-.line-hor {background:#3a3c52;height:1px;overflow:hidden;font-size:0;line-height:0;margin:20px 0 20px 0}
-.line-ver {background-image:url(images/line-ver.gif);background-repeat:repeat-y;width:100%}
-.title {margin-bottom:20px}
-/* boxes */
+
 .box {background:url(images/box-tail.gif) left top repeat-y;width:100%}
 .box .inner {padding:35px 50px 37px 50px;background:url(images/box-bg.jpg) left top no-repeat;overflow:hidden}
 .box a {color:#b5d2f0}
-.box-alt {background:url(images/box-alt-bg.gif) left top repeat-x #130000;width:100%}
-.box-alt .inner {padding:35px 30px 30px 47px}
 
-/* header */
 
-/* content */
-
-/* footer */
  </style>
         <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" type="text/css">
 
     </head>
-    <body>
+    <body >
 
     <table class="box" width="100%" height="60">
         <tbody>
             <tr>
-                <td id="home" width="210"><h1><a href="/">Home Page</a></h1></td>
-                <td valign="top">
+                <td  align="center" valign="bottom" id="home" width="180" ><h1><a href="/">Home Page</a></h1></td>
+                <td>
                     <table class="megamenu" height="57" width="100%" border="0">
                         <tbody>
                             <tr>
