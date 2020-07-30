@@ -13,3 +13,7 @@ def birthday(request):
     return render(request, "michael/birthday.html", {
         "birthday": (today.day == 22) & (today.month == 7)
     })
+
+
+def gallery(request):
+    return render(request, 'michael/gallery.html')
