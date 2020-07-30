@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Our Website!</title>
-        {% load static %}
-        <style type="text/css" media="screen">
-               * {margin:0;padding:0}
+* {margin:0;padding:0}
 html, body {height:100%}
 body {background:#222;font-family:Arial, Helvetica, sans-serif;font-size:100%;line-height:1.125em;color:#fff}
 img {border:0;vertical-align:top;text-align:left}
@@ -129,40 +122,3 @@ h6 {}
 #contacts-form textarea {width:560px;height:105px;padding:1px 0 1px 3px;background:url(images/textarea-bg.gif) right top repeat-x #ccc;border:1px solid #fff;color:#111;margin-bottom:10px;overflow:auto;float:left;font-size:11px}
 #contacts-form a {color:#c02d19;font-weight:bold}
 #content .inner_copy {border:0;color:#f00;float:left;width:50%!important;margin:-202px 0 0 0;overflow:hidden;line-height:0;padding:0;font-size:12px}
-        </style>
-        <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" type="text/css">
-
-    </head>
-    <body>
-
-    <table width="100%" height="60">
-        <tbody>
-            <tr>
-                <td id="home" width="210"><h1><a href="/">Home Page</a></h1></td>
-                <td valign="top">
-                    <table class="megamenu" height="57" width="100%" border="0">
-                        <tbody>
-                            <tr>
-                                <td id="blog"><a href="/blog">Blog</a></td>
-                                <td id="michael"><a href="/michael">Michael</a></td>
-                                <td id="seema"><a href="/seema">Seema</a> </td>
-                                <td id="alana"><a href="/alana">Alana</a> </td>
-                                <td id="users"><a href="/users">
-                                    {% if request.user.username == "" %}
-                                        <a href="/users/login">Login</a>
-                                    {% else %}
-                                         <a href="/users">{{ request.user }}</a>
-                                    {% endif%}</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-        {% block body %}
-        {% endblock %}
-    </body>
-</html>
