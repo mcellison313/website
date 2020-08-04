@@ -1,3 +1,6 @@
+import os
+from website import settings
+
 from django.shortcuts import render
 import datetime
 
@@ -16,4 +19,6 @@ def birthday(request):
 
 
 def gallery(request):
-    return render(request, 'michael/gallery.html')
+    return render(request, 'michael/gallery.html', {
+
+    })
