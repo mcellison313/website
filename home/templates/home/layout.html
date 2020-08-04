@@ -6,8 +6,23 @@
         <title>Our Website!</title>
         {% load static %}
 
-
+        {% block header %}
+        {% endblock header%}
         <link rel="stylesheet"  href="{% static 'home/' %}stylesheet.css" media="screen"/>
+
+
+<!--        move this to external doc-->
+        <script>
+    function showmenu(elmnt)
+    {
+    document.getElementById(elmnt).style.visibility="visible";
+    }
+    function hidemenu(elmnt)
+    {
+    document.getElementById(elmnt).style.visibility="hidden";
+    }
+</script>
+
     </head>
     <body >
 
@@ -16,7 +31,12 @@
             <tr>
                 <td  class="nav" align="center"><a href="/"><br>Home Page</a></td>
                 <td class="nav" align="middle" ><a  href="/blog"><br>Blog</a></td>
-                <td class="nav"align="center"><a  href="/michael"><br>Michael</a></td>
+
+                <td class="nav"align="center" onmouseover="showmenu('michael')" onmouseout="hidemenu('michael')"><a  href="/michael"><br>Michael</a>
+                    <table class="menu" id="michael" width="120">
+                        <tr><td class="menu"><a href="/michael/birthday">Birthday</a></td></tr>
+                        <tr><td class="menu"><a href="/michael/gallery">Gallery</a></td></tr>
+                    </table></td>
                 <td class="nav"align="center"><a href="/seema"><br>Seema</a> </td>
                 <td class="nav"align="center"><a href="/alana"><br>Alana</a> </td>
                 <td class="nav"align="center">
@@ -29,8 +49,13 @@
             </tr>
         </tbody>
     </table>
+
+
+
     <br>
         {% block body %}
         {% endblock %}
+
+<!--    footer Here-->
     </body>
 </html>

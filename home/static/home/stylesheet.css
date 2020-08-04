@@ -70,3 +70,11 @@ td:hover { background:#555}
 }
 
 
+table.menu
+{
+font-size:100%;
+position:absolute;
+visibility:hidden;
+}
+
+
