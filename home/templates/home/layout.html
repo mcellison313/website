@@ -14,30 +14,22 @@
     <table  width="100%" height="60" border="0">
         <tbody>
             <tr>
-                <td  align="center" valign="bottom" id="home" width="180" ><h1><a href="/">Home Page</a></h1></td>
-                <td>
-                    <table class="megamenu" height="57" width="100%" border="0">
-                        <tbody>
-                            <tr>
-                                <td id="blog"><a  href="/blog">Blog</a></td>
-                                <td id="michael"><a  href="/michael">Michael</a></td>
-                                <td id="seema"><a href="/seema">Seema</a> </td>
-                                <td id="alana"><a href="/alana">Alana</a> </td>
-                                <td id="users"><a href="/users">
-                                    {% if request.user.username == "" %}
-                                        <a href="/users/login">Login</a>
-                                    {% else %}
-                                         <a href="/users">{{ request.user }}</a>
-                                    {% endif%}</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <td  class="nav" align="center"><a href="/"><br>Home Page</a></td>
+                <td class="nav" align="middle" ><a  href="/blog"><br>Blog</a></td>
+                <td class="nav"align="center"><a  href="/michael"><br>Michael</a></td>
+                <td class="nav"align="center"><a href="/seema"><br>Seema</a> </td>
+                <td class="nav"align="center"><a href="/alana"><br>Alana</a> </td>
+                <td class="nav"align="center">
+                    {% if request.user.username == "" %}
+                    <a href="/users/login"><br>Login</a>
+                    {% else %}
+                    <a href="/users"><br>{{ request.user }}</a>
+                    {% endif%}</td>
 
-                </td>
             </tr>
         </tbody>
     </table>
-
+    <br>
         {% block body %}
         {% endblock %}
     </body>
