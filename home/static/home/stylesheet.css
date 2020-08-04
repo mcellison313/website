@@ -36,7 +36,7 @@ p {margin-bottom:18px}
 
 a {color:#b5d2f0;outline:none; align:center}
 a:hover{text-decoration:none;
- border:1px solid white;}
+ }
 h1, h2 {line-height:1.2em;color:#fff;text-transform:uppercase;font-weight:normal;margin-bottom:19px}
 h1 {font-size:24px}
 h2 {font-size:20px}
@@ -66,5 +66,7 @@ td a {
 }
 td:hover { background:#555}
 .nav:hover {border:none;text-decoration:none;}
+.link:hover {text-decoration:underline;
+}
 
 
