@@ -26,19 +26,24 @@
     </head>
     <body >
 
+    copy the table i have in the td for drop down on your pages
     <table  width="100%" height="60" border="0">
         <tbody>
             <tr>
                 <td  class="nav" align="center"><a href="/"><br>Home Page</a></td>
+
                 <td class="nav" align="middle" ><a  href="/blog"><br>Blog</a></td>
 
                 <td class="nav"align="center" onmouseover="showmenu('michael')" onmouseout="hidemenu('michael')"><a  href="/michael"><br>Michael</a>
                     <table class="menu" id="michael" width="120">
-                        <tr><td class="menu"><a href="/michael/birthday">Birthday</a></td></tr>
-                        <tr><td class="menu"><a href="/michael/gallery">Gallery</a></td></tr>
+                        <tr><td class="menu" ><a align="center" href="/michael/birthday">Birthday</a></td></tr>
+                        <tr><td class="menu"><a align="center" href="/michael/gallery">Gallery</a></td></tr>
                     </table></td>
+
                 <td class="nav"align="center"><a href="/seema"><br>Seema</a> </td>
+
                 <td class="nav"align="center"><a href="/alana"><br>Alana</a> </td>
+
                 <td class="nav"align="center">
                     {% if request.user.username == "" %}
                     <a href="/users/login"><br>Login</a>
