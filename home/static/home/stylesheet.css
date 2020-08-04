@@ -36,7 +36,7 @@ p {margin-bottom:18px}
 
 a {color:#b5d2f0;outline:none}
 a:hover{text-decoration:none;
- border:0px solid white;}
+ border:1px solid white;}
 h1, h2 {line-height:1.2em;color:#fff;text-transform:uppercase;font-weight:normal;margin-bottom:19px}
 h1 {font-size:24px}
 h2 {font-size:20px}
@@ -56,3 +56,5 @@ td {}
 .box .inner {padding:35px 50px 37px 50px;background:url(images/box-bg.jpg) left top no-repeat;overflow:hidden}
 .box a {color:#b5d2f0}
 
+.image:hover {border:0px solid white;}
+td {align:center;}
