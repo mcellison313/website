@@ -1,5 +1,9 @@
 {% extends "home/layout.html" %}
 
+{% block header %}
+ <title>Our Website!</title>
+{% endblock header%}
+
 {% block body %}
 
 
@@ -10,7 +14,7 @@
     <h3>Who we are:</h3>
     {% load static %}
     <img src="{% static 'home/' %}puppy.png" alt="Get Pick of All Three of Us"
-    width="25%">
+    width="100%" height="100px">
     <p>Pictured here is our ambitious group of rad college students.</p>
     <p>This ragtag group decided to go out on a limb and study and implement this website
     on our own during summer 2020.</p>

@@ -1,5 +1,7 @@
 {% extends "home/layout.html" %}
-
+{% block header %}
+ <title> {{ request.user }}'s Profile</title>
+{% endblock header%}
 {% block body %}
 
  <a href=" {% url 'logout' %}">Log Out</a>
