@@ -2,10 +2,12 @@
 
 {% block body %}
 
-    <h1>Profile: {{ request.user }}</h1>
-     <a href=" {% url 'logout' %}">Log Out</a>
+ <a href=" {% url 'logout' %}">Log Out</a>
 
-    <h3>User Info:</h3>
+<div style="margin:25px">
+    <h1>Profile: {{ request.user }}</h1>
+
+     <h3>User Info:</h3>
     <ul>
 
         <li>Username: {{ request.user.username}}</li>
@@ -21,5 +23,7 @@
         <li>Date Joined: {{ request.user.date_joined }}</li>
 
     </ul>
+</div>
+
 
 {% endblock %}
