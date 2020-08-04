@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/25978200/django-admin-and-sqlite-database-disk-image-is-malformed
+
+second answer with 4 upvotes
