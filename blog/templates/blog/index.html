@@ -16,8 +16,17 @@
         </ul>
         <form action="{% url 'index'  %}" method="post">
             {% csrf_token %}
-            {{ form }}
-
+            <h4>Title of Post:</h4>
+            {% load widget_tweaks %}
+            <p>
+            {{ form.title|add_class:"titleArea" }}
+            {{ form.title.errors }}
+            </p>
+            <h4>Content:</h4>
+            <p>
+            {{ form.message|add_class:"textArea" }}
+            {{ form.message.errors }}
+            </p>
 
             <input type="submit">
         </form>

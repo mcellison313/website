@@ -31,7 +31,7 @@ def post(request, post_id):
     allReplies = Reply.objects.filter(post=post)
 
     if request.method == "POST":
-        if not (request.user.is_authenticated()):
+        if not (request.user.is_authenticated()):  # is user logged in?
             return render(request, "blog/post.html", {
                 "post": post,
                 "replies": allReplies,
@@ -40,7 +40,7 @@ def post(request, post_id):
             })
         form = ReplyForm(request.POST)
 
-        if form.is_valid():  # create new reply and save DOES NOT CHECK FOR VALID USER
+        if form.is_valid():  # create new reply and save
             message = form.cleaned_data["message"]
             user = request.user
 
@@ -60,7 +60,7 @@ def post(request, post_id):
             return render(request, "blog/post.html", {
                 "post": post,
                 "replies": allReplies,
-                "message": 'Form Not Valid',
+                "message": 'Error in Processing Form',
                 "form": ReplyForm
             })
 

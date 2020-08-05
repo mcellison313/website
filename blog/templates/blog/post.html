@@ -16,8 +16,8 @@
             <p><br>{{ reply.author }} {{reply.date}}</p>
             <p>{{ reply.message }}<br></p>
         {% endfor %}
-        <h3>Add Reply</h3>
 
+        <br> <br> <br> <br> <br> <br>
         {% if message %}
             <p style="color:red;">{{ message }}</p>
         {% endif %}
@@ -27,9 +27,11 @@
         <form action="{% url 'post' post.id %}" method="post">
             {% csrf_token %}
             {% load widget_tweaks %}
+            <br>
+            <h4>Enter Reply:</h4>
             <p>
             {{ form.message|add_class:"textArea" }}
-            {{ form.username.errors }}
+            {{ form.message.errors }}
             </p>
 
             <input type="submit">
