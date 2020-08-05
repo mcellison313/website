@@ -7,17 +7,18 @@
 {% block body %}
 {% load static %}
 
-<div align="center" style="margin:30px;">
+<div align="center">
     <h2 id="">Michael's Page</h2>
 <img src="{% static 'michael/photos/michael.jpeg' %}"
      width="386" height="515" alt="Picture of me"/>
     <p>Here is me with my wonderful girlfriend, Casie.</p>
     <br>
-    <h3><a class="link" href="{% url 'birthday' %}">Is Today My Birthday?</a> </h3>
+    <h4><a class="link" href="{% url 'birthday' %}">Is Today My Birthday?</a> </h4>
     <br>
     <h3><a class="link" href="{% url 'gallery' %}">I Also Take Pictures!</a> </h3>
-
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLsyvDWwjkTqtOmqAiTzzfHspTAztB-udL" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JfJYHfrOGgQ" frameborder="0" gesture="media" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 </div>
 

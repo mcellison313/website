@@ -14,6 +14,13 @@
 
 
         </ul>
+        <form action="{% url 'index'  %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+
+
+            <input type="submit">
+        </form>
 
     </div>
 
