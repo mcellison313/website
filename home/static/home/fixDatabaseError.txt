@@ -1,0 +1,14 @@
+https://stackoverflow.com/questions/25978200/django-admin-and-sqlite-database-disk-image-is-malformed
+
+second answer with 4 upvotes
+
+
+https://stackoverflow.com/questions/18503770/how-to-create-user-from-django-shell
+
+add superuser again
+
+from django.contrib.auth.models import User
+user=User.objects.create_user('michael', password='1Michael1')
+user.is_superuser=True
+user.is_staff=True
+user.save()

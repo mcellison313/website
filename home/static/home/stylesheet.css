@@ -4,7 +4,7 @@
 
                * {margin:0;padding:0}
 html, body {height:100%}
-body {background:#FAFAFA;font-family:Arial, Helvetica, sans-serif;font-size:100%;line-height:1.125em;color:black}
+body {background:white;font-family:Arial, Helvetica, sans-serif;font-size:100%;line-height:1.125em;color:#222}
 img {border:0;vertical-align:top;text-align:left}
 object {vertical-align:top;outline:none}
 ul, ol {list-style:none}
@@ -20,7 +20,6 @@ input, select, textarea {font-family:Arial, Helvetica, sans-serif; font-size:1em
 
 .flex-container > a { align="middle";
   background-color: #f1f1f1;
-
   margin: 10px;
   padding: 5px;
   font-size: 30px;
@@ -33,7 +32,7 @@ p {margin-bottom:18px; margin:20px;}
 a {color:#4875A3;outline:none; align:center}
 a:hover{text-decoration:none;
  }
-h1, h2 {line-height:1.2em;color:black;text-transform:uppercase;font-weight:bold;margin-bottom:22px}
+h1, h2, h3, h4, h5 {line-height:1.2em;color:black;text-transform:uppercase;font-weight:bold;margin-bottom:10px}
 h1 {font-size:40px}
 h2 {font-size:34px}
 h3 {font-size:1.25em}
