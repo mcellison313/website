@@ -18,10 +18,40 @@ class ReplyForm(forms.Form):
 
 
 def index(request):
-    return render(request, "blog/index.html", {
+    if request.method == "POST":
+        form2 = PostForm(request.POST)
+        if request.user.is_authenticated:  # is user logged in?
+            if form2.is_valid():
+                title = form2.cleaned_data["title"]
+                message = form2.cleaned_data["message"]
+                user = request.user
+
+                newPost = Post.objects.create(title=title, message=message, author=user)
+                newPost.save()
+
+                # return render of blog post with new Posts
+                return render(request, "blog/post.html", {
+                    "posts": Post.objects.all(),
+                    "form": PostForm
+                })
+            else:  # form not valid
+                return render(request, "blog/post.html", {
+                    "posts": Post.objects.all(),
+                    "message": 'Error in Processing Form',
+                    "form": PostForm
+                })
+        else:  # user not logged in
+            return render(request, "blog/post.html", {
+                "posts": Post.objects.all(),
+                "form": PostForm,
+                "message": "Please Log In to Post Reply"
+            })
+
+    return render(request, "blog/post.html", {
         "posts": Post.objects.all(),
         "form": PostForm
     })
+
 
 
 def post(request, post_id):
@@ -48,7 +78,6 @@ def post(request, post_id):
                     "replies": allReplies,
                     "form": ReplyForm
                 })
-
             else:  # form not valid
                 return render(request, "blog/post.html", {
                     "post": post,
@@ -71,6 +100,9 @@ def post(request, post_id):
         "replies": allReplies,
         "form": ReplyForm
     })
+
+
+
 
 
 

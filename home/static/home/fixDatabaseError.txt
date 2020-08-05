@@ -12,3 +12,10 @@ user=User.objects.create_user('michael', password='1Michael1')
 user.is_superuser=True
 user.is_staff=True
 user.save()
+
+
+from django.contrib.auth.models import User
+user=User.objects.create_user('seema123', password='Magicjack@786')
+user.is_superuser=True
+user.is_staff=True
+user.save()
