@@ -17,7 +17,7 @@ class ReplyForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea())
 
 
-def index(request):
+def blog(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if request.user.is_authenticated:  # is user logged in?
@@ -41,7 +41,7 @@ def index(request):
                     "form": PostForm
                 })
         else:  # user not logged in
-            return render(request, "blog/inedex.html", {
+            return render(request, "blog/index.html", {
                 "posts": Post.objects.all(),
                 "form": PostForm,
                 "message": "Please Log In to Post Reply"
