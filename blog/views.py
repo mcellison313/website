@@ -6,14 +6,15 @@ from django.db import models
 from blog.models import Post, Reply
 from django import forms
 
+
 class PostForm(forms.Form):
     title = forms.CharField(max_length=255)
-    message = forms.CharField(widget=forms.Textarea)
+    message = forms.CharField(widget=forms.Textarea())
 
 
 
 class ReplyForm(forms.Form):
-    message = forms.CharField(widget=forms.Textarea)
+    message = forms.CharField(widget=forms.Textarea())
 
 
 def index(request):
@@ -26,10 +27,17 @@ def index(request):
 def post(request, post_id):
     # current post:
     post = Post.objects.get(pk=post_id)
-    #current replies
+    # current replies
     allReplies = Reply.objects.filter(post=post)
 
     if request.method == "POST":
+        if not (request.user.is_authenticated()):
+            return render(request, "blog/post.html", {
+                "post": post,
+                "replies": allReplies,
+                "form": ReplyForm,
+                "message": "Please Log In to Post Reply"
+            })
         form = ReplyForm(request.POST)
 
         if form.is_valid():  # create new reply and save DOES NOT CHECK FOR VALID USER
@@ -56,7 +64,7 @@ def post(request, post_id):
                 "form": ReplyForm
             })
 
-    # return if not POST
+    # return if not POST or not logged in
     return render(request, "blog/post.html", {
         "post": post,
         "replies": allReplies,

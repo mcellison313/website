@@ -26,9 +26,12 @@
 <!--        cant get any of this to work help-->
         <form action="{% url 'post' post.id %}" method="post">
             {% csrf_token %}
-            {{ form }}
+            {% load widget_tweaks %}
+            <p>
+            {{ form.message|add_class:"textArea" }}
+            {{ form.username.errors }}
+            </p>
 
-            <br>
             <input type="submit">
         </form>
     </div>
