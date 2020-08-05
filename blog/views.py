@@ -31,38 +31,39 @@ def post(request, post_id):
     allReplies = Reply.objects.filter(post=post)
 
     if request.method == "POST":
-        if not (request.user.is_authenticated()):  # is user logged in?
+        form = ReplyForm(request.POST)
+        if request.user.is_authenticated:  # is user logged in?
+            if form.is_valid():  # create new reply and save
+                message = form.cleaned_data["message"]
+                user = request.user
+
+                reply = Reply.objects.create(message=message, author=user, post=post)
+                reply.save()
+                # after saving replies, update list to show
+                allReplies = Reply.objects.filter(post=post)
+
+                # return render of blog post with new replies
+                return render(request, "blog/post.html", {
+                    "post": post,
+                    "replies": allReplies,
+                    "form": ReplyForm
+                })
+
+            else:  # form not valid
+                return render(request, "blog/post.html", {
+                    "post": post,
+                    "replies": allReplies,
+                    "message": 'Error in Processing Form',
+                    "form": ReplyForm
+                })
+        else:  # user not logged in
             return render(request, "blog/post.html", {
                 "post": post,
                 "replies": allReplies,
                 "form": ReplyForm,
                 "message": "Please Log In to Post Reply"
-            })
-        form = ReplyForm(request.POST)
+         })
 
-        if form.is_valid():  # create new reply and save
-            message = form.cleaned_data["message"]
-            user = request.user
-
-            reply = Reply.objects.create(message=message, author=user, post=post)
-            reply.save()
-            #after saving replies, update list to show
-            allReplies = Reply.objects.filter(post=post)
-
-            # return render of blog post with new replies
-            return render(request, "blog/post.html", {
-                "post": post,
-                "replies": allReplies,
-                "form": ReplyForm
-            })
-
-        else:  # form not valid
-            return render(request, "blog/post.html", {
-                "post": post,
-                "replies": allReplies,
-                "message": 'Error in Processing Form',
-                "form": ReplyForm
-            })
 
     # return if not POST or not logged in
     return render(request, "blog/post.html", {
