@@ -1,14 +1,16 @@
 {% extends "home/layout.html" %}
+
 {% block header %}
  <title>Login</title>
 {% endblock header%}
+
 {% block body %}
-<div align="middle">
+<div align="center">
     <h1>Login</h1>
     {% if message %}
 <p  style="color:red;">{{ message }}</p></div>
     {% endif %}
-<div align="middle">
+<div align="center">
 
     <form action= "{% url 'login' %}" method="post">
         {% csrf_token %}
@@ -20,6 +22,6 @@
     <a href="{% url 'signup' %}" >Sign Up!</a>
 
 </div>
-
-
-{% endblock %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+{% endblock body %}

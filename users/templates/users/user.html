@@ -2,11 +2,12 @@
 {% block header %}
  <title> {{ request.user }}'s Profile</title>
 {% endblock header%}
+
 {% block body %}
 
  <a href=" {% url 'logout' %}">Log Out</a>
 
-<div style="margin:25px">
+<div>
     <h1>Profile: {{ request.user }}</h1>
 
      <h3>User Info:</h3>
@@ -26,6 +27,6 @@
 
     </ul>
 </div>
+<br>
 
-
-{% endblock %}
+{% endblock body %}
