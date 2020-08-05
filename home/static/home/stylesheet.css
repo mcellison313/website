@@ -8,7 +8,7 @@ body {background:white;font-family:Arial, Helvetica, sans-serif;font-size:100%;l
 img {border:0;vertical-align:top;text-align:left}
 object {vertical-align:top;outline:none}
 ul, ol {list-style:none}
-table {background:black;}
+.navbar{border-collapse: collapse;background:black;}
 
 
 input, select, textarea {font-family:Arial, Helvetica, sans-serif; font-size:1em;vertical-align:middle;font-weight:normal}
@@ -50,9 +50,11 @@ h6 {}
 .box {background:url(images/box-tail.gif) left top repeat-y;width:100%}
 .box .inner {padding:35px 50px 37px 50px;background:url(images/box-bg.jpg) left top no-repeat;overflow:hidden}
 .box a {color:#b5d2f0}
-td {border:0px solid white;}
-.image:hover {}
-td a {
+
+.nav {}
+.image:hover {border:0px solid white;}
+.nav a {
+    border:0px solid white;
     font-weight: bold;
     color:white;
     display:block;
@@ -61,15 +63,15 @@ td a {
     align:center;
 
 }
-td:hover { background:#222}
-.nav:hover {border:none;text-decoration:none;}
+
+.nav:hover {border:none;text-decoration:none;background:#222;}
 .link:hover {text-decoration:underline;
 }
 
 
 table.menu
 {
-
+background:black;
 font-size:100%;
 position:absolute;
 visibility:hidden;
@@ -142,6 +144,10 @@ color:white;
 color:white;
 }
 
+.replytable {border-collapse: collapse;background:#71b7ff;padding:5px; width:50%}
 
+.replyauthor{ border:1px solid black;padding:10px;height:50px;width:50px}
+.replydata { border:1px solid black;padding:10px;height:50px;}
 
+.replytext {}
 

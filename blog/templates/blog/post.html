@@ -11,11 +11,16 @@
         <h4>{{ post.message }}</h4>
         <p></p>
         <h3>Replies:</h3>
-        {% for reply in replies %}
+        <table class="replytable">
+            {% for reply in replies %}
 
-            <p><br>{{ reply.author }} {{reply.date}}</p>
-            <p>{{ reply.message }}<br></p>
+                <tr  style="{% if forloop.counter|divisibleby:2 %}background:#BFD9FF;{% endif %}" >
+                    <td class="replyauthor">{{ reply.author }}<br>{{reply.date}}</td>
+                    <td class="replydata">{{ reply.message }}</td>
+                </tr>
         {% endfor %}
+        </table>
+
 
         <br> <br> <br> <br> <br> <br>
         {% if message %}
@@ -24,18 +29,21 @@
 
 
 <!--        cant get any of this to work help-->
-        <form action="{% url 'post' post.id %}" method="post">
-            {% csrf_token %}
-            {% load widget_tweaks %}
-            <br>
-            <h4>Enter Reply:</h4>
-            <p>
-            {{ form.message|add_class:"textArea" }}
-            {{ form.message.errors }}
-            </p>
+        <div style="background:#CFCFCF; width:30%; padding: 10px;border-radius: 25px;" >
+            <form action="{% url 'post' post.id %}" method="post" >
+                {% csrf_token %}
+                {% load widget_tweaks %}
+                <br>
+                <h4>Enter Reply:</h4>
+                <p>
+                {{ form.message|add_class:"textArea" }}
+                {{ form.message.errors }}
+                </p>
 
             <input type="submit">
-        </form>
+            </form>
+        </div>
+
     </div>
 
 {% endblock %}
