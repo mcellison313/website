@@ -87,9 +87,7 @@ color: white;
 height:150px;
 
 }
-h1{
-color:white
-}
+
 
 .page-wrapper{
     min-height: 100%;
@@ -134,7 +132,12 @@ color:white
   aling-items: center;
   flex-wrap: wrap-reverse;
 }
-
+.wht{
+color:white;
+}
+.wht0{
+color:white;
+}
 ]
 
 
